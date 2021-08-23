@@ -16,17 +16,17 @@ public class Exerc2 {
         salario = scan.nextDouble();
 
         if (salario <= 20000){
-            salario += (20 * salario)/100;
+            final double v = salario + (20 * salario) / 100;
             System.out.println("Tem direito a 20% de acrescemo " + salario);
         }
 
         if (salario > 20000 && salario <= 45000){
-            salario += (10 * salario)/100;
+            double v = salario + (10 * salario) / 100;
             System.out.println("Tem direito a 10% de acrescemo " + salario);
         }
 
         if (salario > 45000){
-            salario += (5 * salario)/100;
+            double c = salario + (5 * salario) / 100;
             System.out.println("Tem direito a 5% de acrescemo " + salario);
         }
     }
