@@ -21,7 +21,10 @@ public class TesteSTR {
         GuardaRoupa guardaRoupa = new GuardaRoupa();
 
         guardaRoupa.guardarRoupas(roupasAsi);
+        guardaRoupa.devolver(1);
         guardaRoupa.mostrarRoupas();
+
+
 
 
 
