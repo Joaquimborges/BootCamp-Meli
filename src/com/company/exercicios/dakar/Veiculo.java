@@ -58,16 +58,13 @@ public class Veiculo {
     }
 
     public Veiculo() {
+        super();
     }
 
-
-
-
-
-
-
-
-
-
-
+    public Veiculo(double velocidade, double aceleracao, double anguloDeVirada) {
+        super();
+        this.velocidade = velocidade;
+        this.aceleracao = aceleracao;
+        this.anguloDeVirada = anguloDeVirada;
+    }
 }

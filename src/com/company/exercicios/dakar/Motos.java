@@ -1,10 +1,18 @@
 package com.company.exercicios.dakar;
 
-public class Motos {
+public class Motos extends Veiculo{
 
     private String marca;
     private String cor;
+    private String placa;
 
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
 
     public String getMarca() {
         return marca;
@@ -25,18 +33,8 @@ public class Motos {
     public Motos() {
     }
 
-    public Motos(String marca, String cor) {
-        this.marca = marca;
-        this.cor = cor;
+    public Motos(double velocidade, double aceleracao, double anguloDeVirada, String placa) {
+        super(velocidade, aceleracao, anguloDeVirada);
+        this.placa = placa;
     }
-
-
-
-
-
-
-
-
-
-
 }

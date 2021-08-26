@@ -1,12 +1,24 @@
 package com.company.exercicios.dakar;
 
+import java.util.List;
+import java.util.Objects;
+
+
 public class Corrida {
 
-    private double distancia;
-    private double premioEmDolar;
+    private double distancia, premioEmDolar;
     private String nome;
     private int quantidadeDeVeiculosPermitidos;
-    private String[] listaDeVeiculos;
+
+    public List<Veiculo> getListaDeVeiculos() {
+        return listaDeVeiculos;
+    }
+
+    public void setListaDeVeiculos(List<Veiculo> listaDeVeiculos) {
+        this.listaDeVeiculos = listaDeVeiculos;
+    }
+
+    private List<Veiculo> listaDeVeiculos;
 
     public double getDistancia() {
         return distancia;
@@ -40,13 +52,6 @@ public class Corrida {
         this.quantidadeDeVeiculosPermitidos = quantidadeDeVeiculosPermitidos;
     }
 
-    public String[] getListaDeVeiculos() {
-        return listaDeVeiculos;
-    }
-
-    public void setListaDeVeiculos(String[] listaDeVeiculos) {
-        this.listaDeVeiculos = listaDeVeiculos;
-    }
 
     public Corrida() {
     }
@@ -57,4 +62,45 @@ public class Corrida {
         this.nome = nome;
         this.quantidadeDeVeiculosPermitidos = quantidadeDeVeiculosPermitidos;
     }
+
+
+    public void adicionarCarro(double velocidade, double aceleracao, double anguloDeVirada, String placa){
+        Veiculo carro = new Carros(velocidade, aceleracao, anguloDeVirada, placa); //instanciar o objeto a partir da classe super
+        if (listaDeVeiculos.size() < 6){
+            listaDeVeiculos.add(carro);
+        } else {
+            System.out.println("Não existe mais espaço para novos carros");
+        }
+
+    }
+
+    public void adicionarMoto(double velocidade, double aceleracao, double anguloDeVirada, String placa){
+        Veiculo moto = new Motos(velocidade, aceleracao, anguloDeVirada, placa);
+        if (listaDeVeiculos.size() < 6) {
+            listaDeVeiculos.add(moto);
+        } else {
+            System.out.println("Não existe mais espaço para novos carros");
+        }
+    }
+
+    public void removerVeiculo(Veiculo veiculo){
+        for (int v = 0; v < listaDeVeiculos.size(); v++) { //percorrer a lista para identificar o veiculo
+            listaDeVeiculos.remove(veiculo);
+        }
+
+    }
+
+    public void removerVeiculoComPlaca(String placa){
+        for (int p = 0; p < listaDeVeiculos.size(); p++) { //percorrer para identificar o veiculo
+            if (Objects.equals(listaDeVeiculos.get(p).getPatente(), placa)) { // verificar se existe a placa
+                listaDeVeiculos.remove(listaDeVeiculos.get(p)); // remover a placa encontrada
+            }
+        }
+    }
+
+
+
+
+
+
 }
