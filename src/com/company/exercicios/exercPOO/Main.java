@@ -9,13 +9,14 @@ public class Main {
         pessoa1.setAltura(1.60);
         pessoa1.setPeso(57);
 
-        pessoa1.mostrarInfo();
+
 
 
         Pessoa pessoa2 = new Pessoa("Joao", 23, "1234");
 
         Pessoa pessoa3 = new Pessoa("Alex", 22, "234", 45, 1.60);
 
-        pessoa3.calcularIMC(58);
+        pessoa3.calcularIMC(100);
+
     }
 }
