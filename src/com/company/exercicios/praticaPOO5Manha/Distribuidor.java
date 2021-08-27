@@ -8,14 +8,25 @@ public class Distribuidor {
 
         List<Product> listaprodutos = new ArrayList<>();
 
-        listaprodutos.add(new Product("danone", 3 ));
-        listaprodutos.add(new Product("azeite", 16 ));
-        listaprodutos.add(new Product("bolacha", 4 ));
+        listaprodutos.add(new Pereciveis("danone", 3, 2));
+        listaprodutos.add(new Pereciveis("ovos", 12, 2));
+        listaprodutos.add(new Pereciveis("bolacha", 4, 1));
+
+        listaprodutos.add(new NonPerishable("arroz"));
+        listaprodutos.add(new NonPerishable("feijao"));
+
+        double totalper = 0.0;
 
 
-        Product produtos = new Product();
+        for (Product p : listaprodutos){
+            if (p instanceof Pereciveis) {
+                totalper += p.calcule(3);
+            }
+        }
 
-        System.out.println(listaprodutos.toString());
+        System.out.println(totalper);
+
+
 
     }
 
