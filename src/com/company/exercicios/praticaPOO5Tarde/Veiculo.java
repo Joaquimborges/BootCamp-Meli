@@ -1,9 +1,5 @@
 package com.company.exercicios.praticaPOO5Tarde;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 public class Veiculo{
 
     private String modelo;
