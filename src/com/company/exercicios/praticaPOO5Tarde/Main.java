@@ -1,6 +1,7 @@
 package com.company.exercicios.praticaPOO5Tarde;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,11 +28,12 @@ public class Main {
                 .forEach(System.out::println);
 
 
-        veiculos.stream().map(Veiculo::getMarca).sorted()
-                .forEach(System.out::println);
 
+        List<Veiculo> veiculosPrecoBaixo = veiculos.stream().filter(x -> x.getCusto() <1000.0).collect(Collectors.toList());
+        System.out.println(veiculosPrecoBaixo);
 
-        
+        veiculos.stream().sorted(Comparator.comparing(Veiculo ::getMarca).thenComparing(Veiculo ::getCusto)).forEach(System.out::println);
+
 
 
     }

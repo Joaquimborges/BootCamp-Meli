@@ -37,6 +37,9 @@ public class Garagem {
         this.listaDeVeiculos = listaDeVeiculos;
     }
 
+    public void lista1000(List<Veiculo> lista){
+
+    }
 
 
 }
