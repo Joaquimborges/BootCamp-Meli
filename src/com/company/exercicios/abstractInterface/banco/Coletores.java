@@ -1,4 +1,4 @@
-package com.company.exercicios.abstractInterface;
+package com.company.exercicios.abstractInterface.banco;
 
 public interface Coletores {
 
