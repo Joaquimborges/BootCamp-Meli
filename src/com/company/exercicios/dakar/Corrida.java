@@ -10,6 +10,8 @@ public class Corrida {
     private String nome;
     private int quantidadeDeVeiculosPermitidos;
 
+    private SocorristaCarro socorristaCarro;
+
     public List<Veiculo> getListaDeVeiculos() {
         return listaDeVeiculos;
     }
@@ -95,6 +97,43 @@ public class Corrida {
             if (Objects.equals(listaDeVeiculos.get(p).getPatente(), placa)) { // verificar se existe a placa
                 listaDeVeiculos.remove(listaDeVeiculos.get(p)); // remover a placa encontrada
             }
+        }
+    }
+
+    public Veiculo vencedorCorrida(){
+        Veiculo vencedor = null;
+        if(!listaDeVeiculos.isEmpty()) {
+            double melhorDesempenho=0;
+            for (Veiculo veiculo : listaDeVeiculos) {
+                if(melhorDesempenho< desempenhoCorrida(veiculo)){
+                    melhorDesempenho= desempenhoCorrida(veiculo);
+                    vencedor=veiculo;
+                }
+            }
+        }
+        return vencedor;
+    }
+
+
+    public double desempenhoCorrida(Veiculo veiculo){
+        return veiculo.getVelocidade() * 1 / 2 * veiculo.getAceleracao() /(veiculo.getAnguloDeVirada() * (veiculo.getPeso() - veiculo.getQtdRodas() * 100));
+    }
+
+
+    public void socorrerCarro(String placa){
+        for(Veiculo veiculo: listaDeVeiculos){
+            if(veiculo.getPatente().equals(placa)&&(veiculo instanceof Carros)){
+                socorristaCarro.socorrer((Carros) veiculo);
+                return;
+            }
+        }
+        System.out.println("NENHUM CARRO COM ESTA PLACA NA CORRIDA!!!!");
+    }
+
+    public void mostrarVeiculosDaCorrida(){
+        System.out.println("*******VEÍCULOS INSCRITOS***********");
+        for(Veiculo v: listaDeVeiculos) {
+            System.out.println(v.getPatente());
         }
     }
 

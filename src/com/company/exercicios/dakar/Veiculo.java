@@ -8,6 +8,7 @@ public class Veiculo {
     private String patente;
     private int peso;
     private int rodas;
+    private int qtdRodas;
 
     public double getVelocidade() {
         return velocidade;
@@ -66,5 +67,9 @@ public class Veiculo {
         this.velocidade = velocidade;
         this.aceleracao = aceleracao;
         this.anguloDeVirada = anguloDeVirada;
+    }
+
+    public int getQtdRodas(){
+        return qtdRodas;
     }
 }
