@@ -1,4 +1,4 @@
-package com.company.exercicios.extra;
+package com.company.exercicios.extra.funcionarios;
 
 public class Vendedor extends Funcionarios implements Constante{
 
