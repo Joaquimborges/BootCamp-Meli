@@ -1,4 +1,4 @@
-package com.company.exercicios.abstractInterface.banco.animals;
+package com.company.exercicios.abstractInterface.animais;
 
 public class Teste {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.company.exercicios.abstractInterface.banco.animals;
+package com.company.exercicios.abstractInterface.animais;
 
 public abstract class Animal {
 
