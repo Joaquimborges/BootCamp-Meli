@@ -2,39 +2,20 @@ package com.company.exercicios.dakar;
 
 public class Motos extends Veiculo{
 
-    private String marca;
-    private String cor;
-    private String placa;
+    private static final double pesoMoto = 300.0;
+    private static final int qtdRodas = 2;
 
-    public String getPlaca() {
-        return placa;
-    }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public Motos() {
-    }
 
     public Motos(double velocidade, double aceleracao, double anguloDeVirada, String placa) {
+    }
+
+    public Motos(double velocidade, double aceleracao, double anguloDeVirada) {
         super(velocidade, aceleracao, anguloDeVirada);
-        this.placa = placa;
+    }
+
+    @Override
+    public String toString() {
+        return "Motos{} " + super.toString();
     }
 }
