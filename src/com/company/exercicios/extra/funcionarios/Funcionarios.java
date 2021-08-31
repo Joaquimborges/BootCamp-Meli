@@ -1,4 +1,4 @@
-package com.company.exercicios.extra;
+package com.company.exercicios.extra.funcionarios;
 
 public abstract class Funcionarios {
 
